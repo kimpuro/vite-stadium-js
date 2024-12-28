@@ -76,7 +76,7 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
     const frame = useRef()
     const [, params] = useRoute('/item/:id')
     const [hovered, hover] = useState(false)
-    const [rnd] = useState(() => Math.random())
+    // const [rnd] = useState(() => Math.random()) // 이미지 fade 효과를 위한 상태
     const name = getUuid(url)
     const isActive = params?.id === name
     useCursor(hovered)
