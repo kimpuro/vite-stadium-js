@@ -5,7 +5,7 @@ import {useCursor, MeshReflectorMaterial, Image, Text, Environment, CameraContro
 import { useRoute, useLocation } from 'wouter'
 import { easing } from 'maath'
 import getUuid from 'uuid-by-string'
-import ShowRoom from "./components/three/ShowRoom.tsx";
+import ShowRoom from "./components/three/ShowRoom.jsx";
 
 const GOLDENRATIO = 1.61803398875
 
