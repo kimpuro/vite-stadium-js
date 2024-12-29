@@ -2,7 +2,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { App } from './App'
 
-const imageID = (id) => `./images/${id}.png`
+// height 750 width 1260
+const imageID = (id) => `./images/${id}.webp`
 const images = [
     // 왼쪽
     { position: [7, 1, 3], rotation: [0, -Math.PI / 4, 0], url: imageID(1) },
