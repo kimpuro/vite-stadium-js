@@ -10,7 +10,7 @@ import ShowRoom from "./components/three/ShowRoom.jsx";
 const GOLDENRATIO = 1.61803398875
 
 export const App = ({ images }) => (
-    <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [-4, 10, 15] }}>
+    <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [-4, 30, 50] }}>
         <color attach="background" args={['#191920']} />
         {/*<fog attach="fog" args={['#191920', 0, 15]} />*/}
         <group position={[0, -0.5, 0]}>
