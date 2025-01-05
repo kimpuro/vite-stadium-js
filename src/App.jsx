@@ -6,6 +6,7 @@ import { useRoute, useLocation } from 'wouter'
 import { easing } from 'maath'
 import getUuid from 'uuid-by-string'
 import ShowRoom from "./components/three/ShowRoom.jsx";
+import Stars from "./components/Stars.jsx";
 
 const GOLDENRATIO = 1.61803398875
 
@@ -37,7 +38,7 @@ export const App = ({ images }) => (
         {/*<ambientLight intensity={1} />*/}
         <directionalLight position={[0, 20, 0]} intensity={10} />
         {/*<directionalLight position={[0, 40, 0]} intensity={10} />*/}
-
+        <Stars/>
     </Canvas>
 )
 
@@ -58,8 +59,8 @@ function Frames({ images, q = new THREE.Quaternion(), p = new THREE.Vector3() })
         }
     })
     useFrame((state, dt) => {
-        easing.damp3(state.camera.position, p, 0.4, dt)
-        easing.dampQ(state.camera.quaternion, q, 0.4, dt)
+        easing.damp3(state.camera.position, p, 0.6, dt)
+        easing.dampQ(state.camera.quaternion, q, 0.6, dt)
     })
     return (
         <group
