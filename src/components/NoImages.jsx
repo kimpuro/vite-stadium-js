@@ -14,6 +14,8 @@ export const NoImages = () => (
             dollyToCursor={true}
             minDistance={5}
             maxDistance={23}
+            minPolarAngle={0}
+            maxPolarAngle={Math.PI / 2}
         />
         {/*<ambientLight intensity={1} />*/}
         <directionalLight position={[0, 20, 0]} intensity={10}/>
