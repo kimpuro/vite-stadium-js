@@ -14,7 +14,6 @@ const GOLDENRATIO = 1.61803398875
 
 export const App = ({ images }) => (
     <>
-        <Route path="/" component={() => (
             <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [-4, 30, 80] }}>
                 <VideoText position={[0, 8, 0]} />
                 <color attach="background" args={['#191920']} />
@@ -29,8 +28,6 @@ export const App = ({ images }) => (
                 <directionalLight position={[0, 20, 0]} intensity={10} />
                 <Stars />
             </Canvas>
-        )} />
-        <Route path="/full" component={NoImages} />
     </>
 )
 
