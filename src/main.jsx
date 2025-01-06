@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { App } from './App'
+import VideoText from "./components/VideoText.jsx";
 
 // height 750 width 1260
 const imageID = (id) => `./images/${id}.webp`
@@ -14,4 +15,4 @@ const images = [
     { position: [-2, 1, -6], rotation: [0, 0, 0], url: imageID(4) }
 ]
 
-createRoot(document.getElementById('root')).render(<App images={images} />)
+createRoot(document.getElementById('root')).render(<><App images={images} /></>)
