@@ -1,7 +1,8 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { App } from './App'
+import App  from './App'
 import {NoImages} from "./components/NoImages.jsx";
+import FullScreenButton from "./components/FullScreenButton.jsx";
 
 // height 750 width 1260
 const imageID = (id) => `./images/${id}.webp`
@@ -16,4 +17,4 @@ const images = [
 ]
 
 // createRoot(document.getElementById('root')).render(<><NoImages/></>)
-createRoot(document.getElementById('root')).render(<><App images={images} /></>)
+createRoot(document.getElementById('root')).render(<><App images={images} /><FullScreenButton/></>)

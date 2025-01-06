@@ -1,9 +1,9 @@
 import * as THREE from 'three'
-import { useEffect, useRef, useState } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import {useCursor, MeshReflectorMaterial, Image, Text, Environment, CameraControls} from '@react-three/drei'
+import {useEffect, useRef, useState} from 'react'
+import {Canvas, useFrame} from '@react-three/fiber'
+import {useCursor, MeshReflectorMaterial, Image, Text, Environment, CameraControls, Html} from '@react-three/drei'
 import {useRoute, useLocation, Route} from 'wouter'
-import { easing } from 'maath'
+import {easing} from 'maath'
 import getUuid from 'uuid-by-string'
 import ShowRoom from "./components/three/ShowRoom.jsx";
 import Stars from "./components/Stars.jsx";
@@ -12,27 +12,39 @@ import {NoImages} from "./components/NoImages.jsx";
 
 const GOLDENRATIO = 1.61803398875
 
-export const App = ({ images }) => (
-    <>
-            <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [-4, 30, 80] }}>
-                <VideoText position={[0, 8, 0]} />
-                <color attach="background" args={['#191920']} />
+export default function App({images}) {
+    const [fullScreen, setFullScreen] = useState(false)
+    return (
+        <>
+            <Canvas dpr={[1, 1.5]} camera={{fov: 70, position: [-4, 30, 80]}}>
+                <VideoText position={[0, 8, 0]}/>
+                <color attach="background" args={['#191920']}/>
                 {/*<fog attach="fog" args={['#191920', 0, 15]} />*/}
                 <group position={[0, -0.5, 0]}>
-                    <Frames images={images} />
+                    <Frames images={images}/>
                 </group>
-                <Environment preset="city" />
-                <ShowRoom />
+                <Environment preset="city"/>
+                <ShowRoom/>
                 {/*<CameraControls />*/}
                 {/*<ambientLight intensity={1} />*/}
-                <directionalLight position={[0, 20, 0]} intensity={10} />
-                <Stars />
+                <directionalLight position={[0, 20, 0]} intensity={10}/>
+                <Stars/>
+                {/*<Html position={[0, 9,9 ]}>*/}
+                {/*    <button*/}
+                {/*        type="button"*/}
+                {/*        className="button-custom"*/}
+                {/*    >*/}
+                {/*        보기 모드 전환*/}
+                {/*    </button>*/}
+                {/*</Html>*/}
             </Canvas>
-    </>
-)
+
+        </>)
+}
 
 function Frames({
-images, q = new THREE.Quaternion(), p = new THREE.Vector3() }) {
+                    images, q = new THREE.Quaternion(), p = new THREE.Vector3()
+                }) {
     const ref = useRef()
     const clicked = useRef()
     const [, params] = useRoute('/item/:id')
@@ -62,7 +74,7 @@ images, q = new THREE.Quaternion(), p = new THREE.Vector3() }) {
     )
 }
 
-function Frame({ url, c = new THREE.Color(), ...props }) {
+function Frame({url, c = new THREE.Color(), ...props}) {
     const image = useRef()
     const frame = useRef()
     const [, params] = useRoute('/item/:id')
@@ -84,13 +96,13 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
                 onPointerOut={() => hover(false)}
                 scale={[1, GOLDENRATIO, 0.05]}
                 position={[0, GOLDENRATIO / 2, 0]}>
-                <boxGeometry />
-                <meshStandardMaterial color="#151515" metalness={0.5} roughness={0.5} envMapIntensity={2} />
+                <boxGeometry/>
+                <meshStandardMaterial color="#151515" metalness={0.5} roughness={0.5} envMapIntensity={2}/>
                 <mesh ref={frame} raycast={() => null} scale={[0.9, 0.93, 0.9]} position={[0, 0, 0.2]}>
-                    <boxGeometry />
-                    <meshBasicMaterial toneMapped={false} fog={false} />
+                    <boxGeometry/>
+                    <meshBasicMaterial toneMapped={false} fog={false}/>
                 </mesh>
-                <Image raycast={() => null} ref={image} position={[0, 0, 0.7]} url={url} />
+                <Image raycast={() => null} ref={image} position={[0, 0, 0.7]} url={url}/>
             </mesh>
             <Text maxWidth={0.1} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO, 0]} fontSize={0.025}>
                 {name.split('-').join(' ')}

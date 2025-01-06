@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { useEffect, useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import {useCursor, MeshReflectorMaterial, Image, Text, Environment, CameraControls} from '@react-three/drei'
+import {useCursor, MeshReflectorMaterial, Image, Text, Environment, CameraControls, Html} from '@react-three/drei'
 import ShowRoom from "./three/ShowRoom.jsx";
 import Stars from "./Stars.jsx";
 import VideoText from "./VideoText.jsx";
@@ -35,5 +35,13 @@ export const NoImages = () => (
         <directionalLight position={[0, 20, 0]} intensity={10}/>
         {/*<directionalLight position={[0, 40, 0]} intensity={10} />*/}
         <Stars/>
+            <Html position={[0, 9,9 ]}>
+                    <button
+                        type="button"
+                        className="button-custom"
+                    >
+                            보기 모드 전환
+                    </button>
+            </Html>
     </Canvas>
 )
