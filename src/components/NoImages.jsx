@@ -35,13 +35,5 @@ export const NoImages = () => (
         <directionalLight position={[0, 20, 0]} intensity={10}/>
         {/*<directionalLight position={[0, 40, 0]} intensity={10} />*/}
         <Stars/>
-            <Html position={[0, 9,9 ]}>
-                    <button
-                        type="button"
-                        className="button-custom"
-                    >
-                            보기 모드 전환
-                    </button>
-            </Html>
     </Canvas>
 )

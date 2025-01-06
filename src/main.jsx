@@ -17,4 +17,5 @@ const images = [
 ]
 
 // createRoot(document.getElementById('root')).render(<><NoImages/></>)
-createRoot(document.getElementById('root')).render(<><App images={images} /><FullScreenButton/></>)
+// createRoot(document.getElementById('root')).render(<><App images={images} /><FullScreenButton/></>)
+createRoot(document.getElementById('root')).render(<><App images={images} /></>)
