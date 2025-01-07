@@ -12,7 +12,7 @@ export const NoImages = () => (
         <ShowRoom/>
         <CameraControls
             dollyToCursor={true}
-            minDistance={5}
+            minDistance={10}
             maxDistance={23}
             minPolarAngle={0}
             maxPolarAngle={Math.PI / 2}
