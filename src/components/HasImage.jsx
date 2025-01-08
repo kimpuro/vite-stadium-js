@@ -10,6 +10,15 @@ import {easing} from "maath";
 import getUuid from "uuid-by-string";
 
 const GOLDENRATIO = 1.61803398875
+
+const ImageDescription = [
+    '피칭분석/모션 트래킹',
+    'Giga Iot Air Map',
+    '고객관리 멤버십 CRM',
+    '스마트티켓',
+    '스마트오더'
+]
+
 export default function HasImage() {
     // height 750 width 1260
     const imageID = (id) => `./images/${id}.webp`
