@@ -87,18 +87,19 @@ function Frames({
             ref={ref}
             onClick={(e) => (e.stopPropagation(), setLocation(clicked.current === e.object ? '/' : '/item/' + e.object.name))}
             onPointerMissed={() => setLocation('/')}>
-            {images.map((props) => <Frame key={props.url} {...props} /> /* prettier-ignore */)}
+            {images.map((props, index) => <Frame key={props.url} index={index} {...props} />/* prettier-ignore */)}
         </group>
     )
 }
 
-function Frame({url, c = new THREE.Color(), ...props}) {
+function Frame({url,index, c = new THREE.Color(), ...props}) {
     const image = useRef()
     const frame = useRef()
     const [, params] = useRoute('/item/:id')
     const [hovered, hover] = useState(false)
     // const [rnd] = useState(() => Math.random()) // 이미지 fade 효과를 위한 상태
     const name = getUuid(url)
+    const description = ImageDescription[index]
     const isActive = params?.id === name
     useCursor(hovered)
     useFrame((state, dt) => {
@@ -123,7 +124,7 @@ function Frame({url, c = new THREE.Color(), ...props}) {
                 <Image raycast={() => null} ref={image} position={[0, 0, 0.7]} url={url}/>
             </mesh>
             <Text maxWidth={0.1} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO, 0]} fontSize={0.025}>
-                {name.split('-').join(' ')}
+                {description}
             </Text>
         </group>
     )
