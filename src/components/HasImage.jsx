@@ -7,6 +7,7 @@ import {useEffect, useRef, useState} from "react";
 import {useLocation, useRoute} from "wouter";
 import {easing} from "maath";
 import getUuid from "uuid-by-string";
+import Stars from "./Stars.jsx";
 
 const GOLDENRATIO = 1.61803398875
 
@@ -43,6 +44,7 @@ export default function HasImage() {
                 <ShowRoom/>
                 {/*<CameraControls />*/}
                 <directionalLight position={[0, 20, 0]} intensity={10}/>
+                <Stars/>
             </Canvas>
         </>
     )
