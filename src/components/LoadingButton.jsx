@@ -1,4 +1,3 @@
-
 export default function LoadingButton() {
     return (
         <div className="flex-center h-dvh main-bg">

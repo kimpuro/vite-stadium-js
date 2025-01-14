@@ -6,4 +6,5 @@ import {Suspense} from "react";
 import LoadingButton from "./components/LoadingButton.jsx";
 
 
-createRoot(document.getElementById('root')).render(<><Suspense fallback={<LoadingButton/>}><App/><FullScreenButton/></Suspense></>)
+createRoot(document.getElementById('root')).render(<><Suspense
+    fallback={<LoadingButton/>}><App/><FullScreenButton/></Suspense></>)

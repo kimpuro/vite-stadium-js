@@ -1,4 +1,4 @@
-import { Canvas} from '@react-three/fiber'
+import {Canvas} from '@react-three/fiber'
 import {Environment, CameraControls} from '@react-three/drei'
 import ShowRoom from "./three/ShowRoom.jsx";
 import Stars from "./Stars.jsx";

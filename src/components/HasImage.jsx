@@ -2,7 +2,6 @@ import {Canvas, useFrame} from "@react-three/fiber";
 import VideoText from "./VideoText.jsx";
 import {Environment, Image, Text, useCursor} from "@react-three/drei";
 import ShowRoom from "./three/ShowRoom.jsx";
-import Stars from "./Stars.jsx";
 import * as THREE from "three";
 import {useEffect, useRef, useState} from "react";
 import {useLocation, useRoute} from "wouter";
@@ -27,7 +26,6 @@ export default function HasImage() {
         {position: [-6, 1, 2], rotation: [0, 0, 0], url: imageID(1)},
         {position: [-2, 1, -6], rotation: [0, 0, 0], url: imageID(2)},
 
-
         // 오른쪽
         {position: [8, 1, -2], rotation: [0, -Math.PI / 4, 0], url: imageID(3)},
         {position: [7, 1, 3], rotation: [0, -Math.PI / 4, 0], url: imageID(4)}
@@ -44,17 +42,7 @@ export default function HasImage() {
                 <Environment preset="city"/>
                 <ShowRoom/>
                 {/*<CameraControls />*/}
-                {/*<ambientLight intensity={1} />*/}
                 <directionalLight position={[0, 20, 0]} intensity={10}/>
-                <Stars/>
-                {/*<Html position={[0, 9,9 ]}>*/}
-                {/*    <button*/}
-                {/*        type="button"*/}
-                {/*        className="button-custom"*/}
-                {/*    >*/}
-                {/*        보기 모드 전환*/}
-                {/*    </button>*/}
-                {/*</Html>*/}
             </Canvas>
         </>
     )
