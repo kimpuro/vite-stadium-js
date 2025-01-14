@@ -12,11 +12,10 @@ import getUuid from "uuid-by-string";
 const GOLDENRATIO = 1.61803398875
 
 const ImageDescription = [
-    '피칭분석/모션 트래킹',
-    'Giga Iot Air Map',
-    '고객관리 멤버십 CRM',
-    '스마트티켓',
-    '스마트오더'
+    '스마트티켓 안내',
+    '티볼 체험 안내',
+    '응원 플래그',
+    '아구DAY',
 ]
 
 export default function HasImage() {
@@ -25,12 +24,13 @@ export default function HasImage() {
 
     const images = [
         // 왼쪽
-        { position: [7, 1, 3], rotation: [0, -Math.PI / 4, 0], url: imageID(1) },
-        { position: [1, 1, -6], rotation: [0, 0, 0], url: imageID(2) },
+        {position: [-6, 1, 2], rotation: [0, 0, 0], url: imageID(1)},
+        {position: [-2, 1, -6], rotation: [0, 0, 0], url: imageID(2)},
+
 
         // 오른쪽
-        { position: [-6, 1, 2], rotation: [0, 0, 0], url: imageID(3) },
-        // { position: [8, 1, -2], rotation: [0, -Math.PI / 4, 0], url: imageID(4) }
+        {position: [8, 1, -2], rotation: [0, -Math.PI / 4, 0], url: imageID(3)},
+        {position: [7, 1, 3], rotation: [0, -Math.PI / 4, 0], url: imageID(4)}
     ]
     return (
         <>
@@ -92,7 +92,7 @@ function Frames({
     )
 }
 
-function Frame({url,index, c = new THREE.Color(), ...props}) {
+function Frame({url, index, c = new THREE.Color(), ...props}) {
     const image = useRef()
     const frame = useRef()
     const [, params] = useRoute('/item/:id')
@@ -123,9 +123,9 @@ function Frame({url,index, c = new THREE.Color(), ...props}) {
                 </mesh>
                 <Image raycast={() => null} ref={image} position={[0, 0, 0.7]} url={url}/>
             </mesh>
-            {/*<Text maxWidth={0.1} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO, 0]} fontSize={0.05}>*/}
-            {/*    {description}*/}
-            {/*</Text>*/}
+            <Text maxWidth={0.5} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO, 0]} fontSize={0.05}>
+                {description}
+            </Text>
         </group>
     )
 }
